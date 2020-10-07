@@ -11,3 +11,5 @@ Ideally, the SLI directly measures a service level of interest, but sometimes on
 An SLO is a **service level objective**: a target value or range of values for a service level that is measured by an SLI. A natural structure for SLOs is thus **SLI ≤ target**, or **lower bound ≤ SLI ≤ upper bound**. For example, we might decide that we will return Shakespeare search results "quickly," adopting an SLO that our average search request latency should be less than 100 milliseconds.
 
 Choosing and publishing SLOs sets expectations to users about how a service will perform.
+
+For more information please refer to the [Google SRE book](https://landing.google.com/sre/sre-book/chapters/service-level-objectives/).
