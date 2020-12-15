@@ -6,7 +6,7 @@ deployment.
 ## Key Locations
 | Env                                    | Namespace                                                    | GitHub Repo                        |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------|-------------------------------|
-| Prod                        | namespace deployed                                                                            | link to repo                        |  
+| Prod                        | namespace deployed                                                                            | link to repo                        |
 
 ## Dashboards
 Links to the monitoring dashboards for this service.

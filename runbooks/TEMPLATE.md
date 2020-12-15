@@ -6,7 +6,7 @@ deployment.
 ## Key Locations
 | Env                                    | Namespace                                                    | GitHub Repo                        |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------|-------------------------------|
-| Prod                        | namespace deployed                                                                            | link to repo                        |  
+| Prod                        | namespace deployed                                                                            | link to repo                        |
 
 ## Monitoring
 Provide all the important monitoring information related to the application such as links to dashboards, metrics etc.
@@ -68,5 +68,3 @@ Checklist manifesto style steps for how to resolve this alert.  A person who has
  3. Do this thing
  4. Do this other thing
  5. Verify service has recovered
-
-
