@@ -6,7 +6,7 @@ For each of the Operate First managed services and applications, we have created
 These monitoring dashboards are useful for visualizing the metrics (such as Prometheus metrics) collected from the applications to track and analyze the system's overall health.
 The dashboards can be altered, saved and reused as per your specific monitoring needs.
 
-Dashboards are represented by the `GrafanaDashboard` custom resource. You can find example monitoring dashboards defined in separate `yaml` files for each of the Operate First managed applications in this folder. For more information on how these `yaml` files are defined, please refer to [this documentation](https://github.com/integr8ly/grafana-operator/blob/master/documentation/dashboards.md).
+Dashboards can be represented by the `GrafanaDashboard` custom resource or by their raw `JSON` files. You can find example monitoring dashboards defined in separate `JSON` files for each of the Operate First managed applications in this folder. For more information on how the Grafana dashboards are defined, please refer to [this documentation](https://github.com/integr8ly/grafana-operator/blob/master/documentation/dashboards.md).
 
 ## Using the Dashboards
 
