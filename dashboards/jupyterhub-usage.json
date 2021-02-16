@@ -268,7 +268,7 @@
       },
       "id": 24,
       "options": {
-        "content": "The panel below displays the CPU Usage for all JupyterHub users.\nThe CPU usage is calculated for each container running in a pod.",
+        "content": "The panel below displays the CPU Usage (%) for all JupyterHub users.\nThe CPU usage is calculated for each container running in a pod.",
         "mode": "markdown"
       },
       "pluginVersion": "7.1.0",
@@ -325,7 +325,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=\"opf-jupyterhub\", container!=\"POD\", pod=~\"jupyterhub-nb.*\"}[5m])) by(pod,container)",
+          "expr": "(sum(rate(container_cpu_usage_seconds_total{namespace=\"opf-jupyterhub\", container!=\"POD\", pod=~\"jupyterhub-nb.*\"}[5m])) by(pod,container))*100",
           "hide": false,
           "interval": "",
           "legendFormat": "{{container}} in {{pod}}",
@@ -336,7 +336,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Pod CPU Usage",
+      "title": "Pod CPU Usage (%)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -391,7 +391,7 @@
       },
       "id": 20,
       "options": {
-        "content": "The panel below displays the following CPU resources for a specific JupyterHub pod:\n* CPU Requests\n* CPU Limits\n* CPU Usage\n* CPU Throttling\n\nTo view the CPU details of a particular pod, select the user id from the `User ID` drop-down filter on the top left hand corner of this page.",
+        "content": "The panel below displays the following CPU resources for a specific JupyterHub pod:\n* CPU Requests\n* CPU Limits\n* CPU Usage (%)\n* CPU Throttling\n\nTo view the CPU details of a particular pod, select the user id from the `User ID` drop-down filter on the top left hand corner of this page.",
         "mode": "markdown"
       },
       "pluginVersion": "7.1.0",
@@ -455,7 +455,7 @@
           "refId": "A"
         },
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{container!=\"POD\", namespace=\"opf-jupyterhub\", pod=~\"jupyterhub-nb-$user_id\"}[5m]))",
+          "expr": "(sum(rate(container_cpu_usage_seconds_total{container!=\"POD\", namespace=\"opf-jupyterhub\", pod=~\"jupyterhub-nb-$user_id\"}[5m])))*100",
           "hide": false,
           "interval": "",
           "legendFormat": "pod usage",
