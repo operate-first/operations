@@ -1,4 +1,4 @@
-### Service Level Indicators
+# Service Level Indicators
 
 SLIs are carefully defined quantitative measures of some aspect of the level of service that is provided. You can find more information on SLIs in the [Site Reliability Engineering Book](https://landing.google.com/sre/sre-book/chapters/service-level-objectives).
 
@@ -8,13 +8,13 @@ SLIs are carefully defined quantitative measures of some aspect of the level of 
 | Latency             | < to-be-implemented >    | In Progress |
 | Quality                  |           < to-be-implemented >                                              | In Progress                          |
 
-#### SLI Descriptions
+## SLI Descriptions
 
 1. **Availability:** This tells us whether the Jupyterhub service is available or not.
 2. **Latency:** This tells us how long it took Jupyterhub to process a request.
 3. **Quality:** This tells us the performance of Jupyterhub such as tracking CPU/Memory usage
 
-### Usage Metrics
+## Usage Metrics
 
 These metrics are being used to describe/highlight important user activity when using the Jupyterhub service.
 
@@ -40,7 +40,8 @@ These metrics are interesting to look at but their usefulness has not yet been d
 | Memory Usage | sum(container_memory_rss{pod_name=~".*jupyter.*"}) by (pod_name)                                                                                                                         | SRE SLI        | Done |
 | Container Creation Errors (grouped by each user's pod) | (kube_pod_container_status_waiting_reason{namespace="dh-prod-jupyterhub",pod=~"jupyterhub-nb-.*", reason="$reason"} == 1)                                                                                                                         | SRE SLI        | Done |
 
-#### Metric Descriptions
+## Metric Descriptions
+
 1. **Number of Server Spawn Operations:** A spawner starts each single-user notebook servers, this metric keeps track of the number of server spawner operations
 2. **Hub Pod Restart Count:** This metric keeps track of the number of restarts each pod undergoes
 3. **Pod Error Codes Count:** This metric keeps track of the number of different HTTP request error codes
