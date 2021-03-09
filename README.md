@@ -11,7 +11,7 @@ SRE is a software engineering approach to manage operations for systems, applica
 We have [Open Data Hub](https://opendatahub.io/) applications deployed and running in a MOC [(Mass Open Cloud)](https://massopen.cloud/) cluster. Open Data Hub is an end-to-end AI/ML platform on top of OpenShift Container Platform which provides various tools for Data Scientists and Engineers.
 
 The components we currently have available are:
-* [JupyterHub](https://jupyterhub-opf-jupyterhub.apps.cnv.massopen.cloud/hub/login)
+* [JupyterHub](https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/hub/login)
 
 ## SLI and SLOs
 
@@ -21,9 +21,9 @@ The `sli-slo` folder [here](https://github.com/operate-first/SRE/tree/master/sli
 
 ## Operational Tools
 
-* [Prometheus](http://prometheus-portal-opf-monitoring.apps.cnv.massopen.cloud/graph) - Monitoring tool capturing time series metrics for available Operate First services
+* [Prometheus](http://prometheus-portal-opf-monitoring.apps.zero.massopen.cloud/graph) - Monitoring tool capturing time series metrics for available Operate First services
 * [Prometheus Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) - Alertmanager for handling alerts and routing them to the appropriate receiver integration such as Email, Slack, PagerDuty etc
-* [Grafana](https://grafana-route-opf-monitoring.apps.cnv.massopen.cloud/) - Visualization tool for creating monitoring dashboards
+* [Grafana](https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/) - Visualization tool for creating monitoring dashboards
 * [GitHub Receiver](https://github.com/m-lab/alertmanager-github-receiver) - Incident reporting tool for handling outages/incidents
 
 ## Incident Management
