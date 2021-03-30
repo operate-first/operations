@@ -1,3 +1,2 @@
 ---
-check:
-  - thoth-precommit
+check: []
