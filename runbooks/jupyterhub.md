@@ -4,17 +4,19 @@ This document provides information on how to administer our JupyterHub
 deployment.
 
 ## Key Locations
-| Env                                    | Namespace                                                    | GitHub Repo                        |
-|----------------------------------------|-----------------------------------------------------------------------------------------------------------|-------------------------------|
-| MOC-ZERO Prod                       | [opf-jupyterhub](https://console-openshift-console.apps.zero.massopen.cloud/project-details/ns/opf-jupyterhub)                                                                            | https://github.com/operate-first/apps/tree/master/odh/base/jupyterhub                        |
+
+| Env           | Namespace                                                                                                      | GitHub Repo                                                           |
+| ------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| MOC-ZERO Prod | [opf-jupyterhub](https://console-openshift-console.apps.zero.massopen.cloud/project-details/ns/opf-jupyterhub) | https://github.com/operate-first/apps/tree/master/odh/base/jupyterhub |
 
 ## Dashboards
+
 Links to the monitoring dashboards for this service.
 
-| Dashboard Description                     | Dashboard URL     |
-| ------------------------------------------- | ------------ |
-| JupyterHub SLI/SLO                       | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/BfSK2f1Mz/jupyterhub-sli-slo?orgId=1 |                            |
-| JupyterHub Usage       |https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/YuYfkHYMk/jupyterhub-usage?orgId=1  |                                                                                                                                                                       |
+| Dashboard Description | Dashboard URL                                                                                        |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| JupyterHub SLI/SLO    | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/BfSK2f1Mz/jupyterhub-sli-slo?orgId=1 |
+| JupyterHub Usage      | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/YuYfkHYMk/jupyterhub-usage?orgId=1   |
 
 ## Prerequisites
 
@@ -27,12 +29,14 @@ in the necessary files in git and redeployed (rather than manually editing
 OpenShift objects directly).
 
 ## Upkeep and Administration
+
 JupyterHub includes an Admin tool that lets us manage users. In production,
 this tool can be reached [here](https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/hub/admin). Note that the members of the `operate-first` group have been added as `jupyterhub_admins` [here](https://github.com/operate-first/apps/blob/master/odh/base/jupyterhub/overrides/jupyterhub/base/jupyterhub-configmap.yaml). The admin tool will let you stop/start,
 delete, and access a user's notebook server and can be very helpful for
 addressing issues that JupyterHub users may encounter.
 
 ## Common Problems
+
 The following is a list of common issues we've encountered with JupyterHub and
 how to fix them.
 
@@ -43,16 +47,14 @@ that you can spin up a notebook.
 
 ### Insufficient disk space for notebook pod
 
-When a user runs out of disk space on their notebook pod, the pod will fail
-to start and give little indication to the user about why that's happening.
-Use our [grafana dashboard](https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/YuYfkHYMk/jupyterhub-usage?orgId=1) to determine if the user has, in fact, used up
-their storage quota.
+When a user runs out of disk space on their notebook pod, the pod will fail to start and give little indication to the user about why that's happening.
+Follow steps [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/analyze_storage.feature) to determine if the user has, in fact, used up their storage quota.
 
-If the user has run out of storage space, follow the steps [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/ops/increase_pvc_size_jh.feature) to increase their PVC size.
+If the user has run out of storage space, follow the steps [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/increase_pvc_size_jh.feature) to increase their PVC size.
 
 ### Custom Image not listed in Spawner UI
 
-Custom JupyterHub notebook images add libraries, and kernels to JupyterHub which users can spawn and use. The steps followed to create these custom images are documented [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/ops/add_imagestream_to_jh.feature).
+Custom JupyterHub notebook images add libraries, and kernels to JupyterHub which users can spawn and use. The steps followed to create these custom images are documented [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/add_imagestream_to_jh.feature).
 
 After adding the custom image to `odh/base/jupyterhub/notebook-images` if the images do not show up in the JH Spawner UI then ensure the following:
 
