@@ -5,9 +5,10 @@ deployment.
 
 ## Key Locations
 
-| Env           | Namespace                                                                                                      | GitHub Repo                                                           |
-| ------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| MOC-ZERO Prod | [opf-jupyterhub](https://console-openshift-console.apps.zero.massopen.cloud/project-details/ns/opf-jupyterhub) | https://github.com/operate-first/apps/tree/master/odh/base/jupyterhub |
+| Env      | Namespace            | GitHub Repo                                                           |
+|----------|----------------------|-----------------------------------------------------------------------|
+| MOC ZERO | [opf-jupyterhub][1]  | https://github.com/operate-first/apps/tree/master/odh/base/jupyterhub |
+
 
 ## Dashboards
 
@@ -31,7 +32,7 @@ OpenShift objects directly).
 ## Upkeep and Administration
 
 JupyterHub includes an Admin tool that lets us manage users. In production,
-this tool can be reached [here](https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/hub/admin). Note that the members of the `operate-first` group have been added as `jupyterhub_admins` [here](https://github.com/operate-first/apps/blob/master/odh/base/jupyterhub/overrides/jupyterhub/base/jupyterhub-configmap.yaml). The admin tool will let you stop/start,
+this tool can be reached [here][2]. Note that the members of the `operate-first` group have been added as `jupyterhub_admins` [here][3]. The admin tool will let you stop/start,
 delete, and access a user's notebook server and can be very helpful for
 addressing issues that JupyterHub users may encounter.
 
@@ -42,24 +43,24 @@ how to fix them.
 
 ### Smoke Test
 
-Verify that the service is `up` and `available` by checking if you can access/login to the service [endpoint](https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/). Verify that the page loads, that you can log in, and
+Verify that the service is `up` and `available` by checking if you can access/login to the service [endpoint][4]. Verify that the page loads, that you can log in, and
 that you can spin up a notebook.
 
 ### Insufficient disk space for notebook pod
 
 When a user runs out of disk space on their notebook pod, the pod will fail to start and give little indication to the user about why that's happening.
-Follow steps [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/analyze_storage.feature) to determine if the user has, in fact, used up their storage quota.
+Follow steps [here][5] to determine if the user has, in fact, used up their storage quota.
 
-If the user has run out of storage space, follow the steps [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/increase_pvc_size_jh.feature) to increase their PVC size.
+If the user has run out of storage space, follow the steps [here][6] to increase their PVC size.
 
 ### Custom Image not listed in Spawner UI
 
-Custom JupyterHub notebook images add libraries, and kernels to JupyterHub which users can spawn and use. The steps followed to create these custom images are documented [here](https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/add_imagestream_to_jh.feature).
+Custom JupyterHub notebook images add libraries, and kernels to JupyterHub which users can spawn and use. The steps followed to create these custom images are documented [here][7].
 
 After adding the custom image to `odh/base/jupyterhub/notebook-images` if the images do not show up in the JH Spawner UI then ensure the following:
 
 - The imagestream has the label:   opendatahub.io/notebook-image: "true"
-- The imagestream was deployed by ArgoCD in [this app](https://argocd-server-argocd.apps.moc-infra.massopen.cloud/applications/opf-jupyterhub).
+- The imagestream was deployed by ArgoCD in [this app][8].
 
 ### User unable to start server
 
@@ -94,3 +95,17 @@ JupyterHub can occasionally end up in a state where the main jupyterhub pod is u
 ```
 
 The issue can be resolved by restarting both pods.
+
+### "No Kernel" or "Error Starting Kernel" errors
+
+If the user is encountering issues starting their server and encounter errors pertaining to their Kernel, they can try restarting their Kernel by following steps [here][9].
+
+[1]: https://console-openshift-console.apps.zero.massopen.cloud/project-details/ns/opf-jupyterhub
+[2]: https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/hub/admin
+[3]: https://github.com/operate-first/apps/blob/master/odh/base/jupyterhub/overrides/jupyterhub/base/jupyterhub-configmap.yaml
+[4]: https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/
+[5]: https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/analyze_storage.feature
+[6]: https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/increase_pvc_size_jh.feature
+[7]: https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/add_imagestream_to_jh.feature
+[8]: https://argocd-server-argocd.apps.moc-infra.massopen.cloud/applications/opf-jupyterhub
+[9]: https://github.com/operate-first/blueprint/blob/main/docs/userstories/jupyterhub/reinstall_kernel.feature
