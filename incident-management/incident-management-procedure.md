@@ -28,13 +28,17 @@ At the start of an incident, identify the operation technicians (OT) and communi
 
 Communications Coordinator:
 
-1. CC must create an Issue [in the SRE repo][1], use [this][3] template. Assign all (OT) to the issue, along with the CC.
-2. CC should paste the same message in the slack [Announcement channel][4]
-3. CC should follow along and record any significant updates in the github issue thread.
-4. Once the incident is resolved, the CC should send out a [resolution message][5] to the issue thread and close it.
-5. Send a resolution announcement to the [Announcement channel][4] with a brief message and link to the Github issue thread.
+1. CC must create an Issue [in the SRE repo][1], use [this][3] template.
+2. Assign all (OT) to the issue, along with the CC. Add the `incident` label to this issue.
+3. CC should paste the same message in the slack [Announcement channel][4]
+4. CC should follow along and record any significant updates in the github issue thread.
+5. Once the incident is resolved, the CC should send out a [resolution message][5] to the issue thread.
+6. Send a resolution announcement to the [Announcement channel][4] with a brief message and link to the Github issue thread.
 
    E.g.: `INCIDENT NOTICE: <CLUSTER> - <SERVICE> incident, for details please follow this issue: <LINK_TO_GH_ISSUE>`.
+7. Summarise the resolution and cause into a post-mortem comment in the issue.
+8. Add a new label to the issue called `post-mortem`.
+9. Close the issue.
 
 Operations Technician:
 
@@ -58,7 +62,7 @@ When an update is agreed upon, the communications coordinator must be identified
 
 Communications Coordinator:
 1. Before the upgrade the CC should:
-    - create an Issue [in the SRE repo][1]. Assign all (OT) to the issue, along with the CC.
+    - create an Issue [in the SRE repo][1]. Assign all (OT) to the issue, along with the CC. Add the `ocp-upgrade` label to this issue.
         - For cluster update: use [this][6] template
         - For any service update: use [this][7] template
     - send an email out to `operate-first-users@lists.massopen.cloud` using the same template chosen previously.
@@ -68,6 +72,10 @@ Communications Coordinator:
 
 3. During the upgrade CC should follow along and record any significant updates in the github issue thread **only**.
 4. After the upgrade CC should send a resolution notice using [this][8] template to all 3 channels from (1).
+5. If there were unexpected issues/bugs encountered during the upgrade then:
+    - Summarise the resolution and cause into a post-mortem comment in the issue.
+    - Add a new label to the issue called `post-mortem`.
+6. Close the issue thread.
 
 Operations Technician:
 
@@ -101,7 +109,7 @@ This incident has been resolved.
 
 <Optional: Any important information about lingering effects of the incident
 
-Please let us know if you continue to see any remaining issues.
+Please let us know if you continue to see any remaining issues. We will be following up with a post-mortem in this thread.
 ```
 
 ### Cluster Version Upgrade Notice Template
