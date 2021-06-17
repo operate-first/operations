@@ -14,10 +14,11 @@ deployment.
 
 Links to the monitoring dashboards for this service.
 
-| Dashboard Description | Dashboard URL                                                                                        |
-| --------------------- | ---------------------------------------------------------------------------------------------------- |
-| JupyterHub SLI/SLO    | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/0fddcc62fa2792f6c6db1a2d6fdd109bde1196ec/jupyterhub-sli-slo?orgId=1 |
-| JupyterHub Usage      | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/24cc5f554da78f3ca60a40f190f7e23203f7d847/jupyterhub-usage?orgId=1   |
+| Dashboard Description         | Dashboard URL                                                                                                                     |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| JupyterHub SLI/SLO            | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/BfSK2f1Mz/jupyterhub-sli-slo                                      |
+| JupyterHub Usage              | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/24cc5f554da78f3ca60a40f190f7e23203f7d847/jupyterhub-usage?orgId=1 |
+| JypyterHub - User Perspective | https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/d/fuJBFErMz/jupyterhub-user-perspective                             |
 
 ## Prerequisites
 
