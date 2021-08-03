@@ -1,21 +1,21 @@
-# Site Reliability Engineering (SRE) Support
-
-This repository contains all the SRE (Site Reliability Engineering) principles and guidelines for managing the [Operate  First](https://operate-first.github.io/operate-first/) services.
+# Site Reliability Engineering (SRE)
 
 ## What is SRE?
 
-SRE is a software engineering approach to manage operations for systems, applications and services. We use software as a tool to manage systems, solve problems, and automate operations tasks.
+Site Reliability Engineering, or SRE, is a software engineering approach to manage operations for systems, applications, and services. We use software as a tool to manage systems, solve problems, and automate operations tasks.
+
+If you are interested in learning SRE practices, you're in the right place! This page provides an overview of the SRE principles and guidelines for managing the [Operate  First](https://operate-first.github.io/operate-first/) services.
 
 ## Services Monitored
 
-We have [Open Data Hub](https://opendatahub.io/) applications deployed and running in a MOC [(Mass Open Cloud)](https://massopen.cloud/) cluster. Open Data Hub is an end-to-end AI/ML platform on top of OpenShift Container Platform which provides various tools for Data Scientists and Engineers.
+We have [Open Data Hub](https://opendatahub.io/) applications deployed and running in an MOC [(Mass Open Cloud)](https://massopen.cloud/) cluster. Open Data Hub is an end-to-end AI/ML platform on top of OpenShift Container Platform which provides various tools for Data Scientists and Engineers.
 
 The components we currently have available are:
 * [JupyterHub](https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/hub/login)
 
 ## SLI and SLOs
 
-For each of the Operate First managed services, we define Service Level Indicators (SLI) and Service Level Objectives (SLO) to help us monitor the availability of the service and improve its reliability.
+For each of the Operate First managed services, we define Service Level Indicators (SLI) and Service Level Objectives (SLO). SLIs help us monitor the availability of the service, and SLOs define goals for us to improve its reliability.
 
 The `sli-slo` folder [here](https://github.com/operate-first/SRE/tree/master/sli-slo) lists out the SLI/SLO for each of the applications in separate markdown files. For eg, you can find the SLI/SLO defined for the `JupyterHub` application [here](https://github.com/operate-first/SRE/blob/master/sli-slo/jupyterhub.md).
 
@@ -36,7 +36,6 @@ The [`incident-management`](https://github.com/operate-first/SRE/tree/master/inc
 
 ## Runbooks
 
-For each of the services being monitored, we aim to define runbooks for providing information on how to administer, debug and effectively troubleshoot common problems of a service.
+For each of the services being monitored, we define runbooks for providing information on how to administer, debug, and effectively troubleshoot common problems of a service.
 
-These runbooks (when created), will be defined in the [`runbooks`](https://github.com/operate-first/SRE/tree/master/runbooks)
-folder.
+We will place runbooks in the [`runbooks`](https://github.com/operate-first/SRE/tree/master/runbooks) folder.
