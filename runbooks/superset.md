@@ -24,7 +24,7 @@ Run the following:
 $ oc rsh ${SUPERSET_DB_POD}
 sh-4.2$ psql
 postgres=# \connect supersetdb
-supersetdb=# UPDATE public.dbs SET password = null
+supersetdb=# UPDATE public.dbs SET password = null;
 ```
 
 ### Duplicate key value violates unique constraint
