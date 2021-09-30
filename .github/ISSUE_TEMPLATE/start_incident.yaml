@@ -1,0 +1,47 @@
+name: Incident
+description: "Create an Incident."
+title: "[INCIDENT][<CLUSTER/<SERVICE>] - <SHORT Title MSG>"
+labels: [incident]
+body:
+  - type: input
+    id: cluster
+    attributes:
+      label: Clusters Affected
+      description: |
+        Please enter the affected clusters.
+      placeholder: <cluster1>, <cluster2>, ...
+    validations:
+      required: true
+  - type: textarea
+    id: users-affected
+    attributes:
+      label: Users Affected
+      description: |
+        Please enter the users that are directly affected by this incident.
+      placeholder: <users-affected>
+    validations:
+      required: true
+  - type: textarea
+    id: msg-body
+    attributes:
+      label: Incident Description
+      description: |
+        Please describe the details of the incident. A simple template is provided
+        for convenience.
+      placeholder: |
+        Hello Operate First users,
+
+        We are investigating an ongoing incident affecting <SERVICE> on <CLUSTER>.
+
+        We will provide updates to this issue thread as the incident progresses.
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Relevant Links
+      description: |
+        Please list any relevant links related to this incident.
+      placeholder: |
+        - https://link-1...
+        - https://link-2...
