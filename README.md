@@ -6,37 +6,12 @@ This repository contains all the SRE (Site Reliability Engineering) principles a
 
 SRE is a software engineering approach to manage operations for systems, applications and services. We use software as a tool to manage systems, solve problems, and automate operations tasks.
 
-## Services Monitored
+## Get started
 
-We have [Open Data Hub](https://opendatahub.io/) applications deployed and running in a MOC [(Mass Open Cloud)](https://massopen.cloud/) cluster. Open Data Hub is an end-to-end AI/ML platform on top of OpenShift Container Platform which provides various tools for Data Scientists and Engineers.
+If you'd like to learn and get hands on experience with SRE practices, but aren't sure where or how to start, let us help!
 
-The components we currently have available are:
-* [JupyterHub](https://jupyterhub-opf-jupyterhub.apps.zero.massopen.cloud/hub/login)
+1. Follow this link to find [beginner friendly issues](https://github.com/operate-first/support/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
+2. Tag yourself in the issue
+3. Join the [Slack](https://join.slack.com/t/operatefirst/shared_invite/zt-o2gn4wn8-O39g7sthTAuPCvaCNRnLww) and let us know that you're interested in helping by posting in the `#support` channel a short introduction of yourself and a link to the issue you'd like to complete.
 
-## SLI and SLOs
-
-For each of the Operate First managed services, we define Service Level Indicators (SLI) and Service Level Objectives (SLO) to help us monitor the availability of the service and improve its reliability.
-
-The `sli-slo` folder [here](https://github.com/operate-first/SRE/tree/master/sli-slo) lists out the SLI/SLO for each of the applications in separate markdown files. For eg, you can find the SLI/SLO defined for the `JupyterHub` application [here](https://github.com/operate-first/SRE/blob/master/sli-slo/jupyterhub.md).
-
-## Operational Tools
-
-* [Prometheus](http://prometheus-portal-opf-monitoring.apps.zero.massopen.cloud/graph) - Monitoring tool capturing time series metrics for available Operate First services
-* [Prometheus Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) - Alertmanager for handling alerts and routing them to the appropriate receiver integration such as Email, Slack, PagerDuty etc
-* [Grafana](https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/) - Visualization tool for creating monitoring dashboards
-* [GitHub Receiver](https://github.com/m-lab/alertmanager-github-receiver) - Incident reporting tool for handling outages/incidents
-
-## Incident Management
-
-All of the Operate First services are monitored by Prometheus. We use Prometheus metrics to identify and define alerts on possible outages/incidents.
-
-The [GitHub Alertmanager Receiver](https://github.com/m-lab/alertmanager-github-receiver) is our chosen tool for handling and reporting outages/incidents to our users.
-
-The [`incident-management`](https://github.com/operate-first/SRE/tree/master/incident-management) folder contains more information on how to setup GitHub alertmanager receiver and configure Prometheus alerts.
-
-## Runbooks
-
-For each of the services being monitored, we aim to define runbooks for providing information on how to administer, debug and effectively troubleshoot common problems of a service.
-
-These runbooks (when created), will be defined in the [`runbooks`](https://github.com/operate-first/SRE/tree/master/runbooks)
-folder.
+To learn more, check out the [incident management procedures](https://www.operate-first.cloud/operations/sre/incident-management/incident-management-procedure.md), [GitHub receiver setup](https://www.operate-first.cloud/operations/sre/incident-management/github-receiver-setup.md), learn to [configure Prometheus alerts](https://www.operate-first.cloud/operations/sre/incident-management/configure-prometheus-alerts.md), or browse the [GitHub repo](https://github.com/operate-first/support).
