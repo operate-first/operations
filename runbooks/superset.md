@@ -20,12 +20,18 @@ To fix this you may have to set the secret key to null so it may be refreshed. F
 
 Run the following:
 
+> NOTE: that running the following will clear the passwords for the databases in superset, and will need to be re-entered
+
 ```bash
 $ oc rsh ${SUPERSET_DB_POD}
 sh-4.2$ psql
 postgres=# \connect supersetdb
 supersetdb=# UPDATE public.dbs SET password = null;
+supersetdb=# UPDATE public.dbs SET encrypted_extra = null;
 ```
+
+Explained more [here](https://github.com/operate-first/SRE/issues/408)
+
 
 ### Duplicate key value violates unique constraint
 
