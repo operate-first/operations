@@ -1,6 +1,6 @@
 # Site Reliability Engineering (SRE) Support
 
-This repository contains all the SRE (Site Reliability Engineering) principles and guidelines for managing the [Operate  First](https://operate-first.github.io/operate-first/) services.
+This repository contains all the SRE (Site Reliability Engineering) principles and guidelines for managing the [Operate  First](https://operate-first.github.io/) services.
 
 ## What is SRE?
 
