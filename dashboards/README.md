@@ -10,7 +10,7 @@ Dashboards can be represented by the `GrafanaDashboard` custom resource or by th
 
 ## Adding the Dashboards
 
-The Operate First Grafana instance can be accessed at: https://grafana-route-opf-monitoring.apps.zero.massopen.cloud/.
+The Operate First Grafana instance can be accessed [here]( https://grafana.operate-first.cloud/)
 
 To include additional Operate First monitoring dashboards to Grafana, you will need to:
 
