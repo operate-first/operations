@@ -1,6 +1,5 @@
 # Configuring Prometheus Alerts
 
-Our Prometheus instance can be reached at:  http://prometheus-portal-opf-monitoring.apps.zero.massopen.cloud/graph.
 Follow the instructions described below for configuring alerts to our Prometheus instance.
 
 ## Adding Alerts
@@ -59,4 +58,4 @@ In order to differentiate and route the alerts to their respective receivers, yo
 
 Depending on your receiver type, you will add it under the `receivers` field with a suitable name. For more information on the various receivers supported by Prometheus and how they are defined, you can refer to the documentation [here](https://prometheus.io/docs/alerting/latest/configuration/#receiver).
 
-6. Submit a PR with all the above changes to our `operate-first/apps` repo. Once it is successfully merged, you should be able to confirm and view your alerting rules here: http://prometheus-portal-opf-monitoring.apps.zero.massopen.cloud/alerts!
+6. Submit a PR with all the above changes to our `operate-first/apps` repo.
